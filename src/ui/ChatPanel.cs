@@ -6,27 +6,11 @@ namespace UI
 {
     public class ChatPanel : ListBox
     {
-        private Form m_obParent;
         private Dictionary<string, ChatItem> m_hmChatItem;
         private SortedDictionary<ulong, string> m_setChatTime;
 
-        public ChatPanel(Form obParent)
+        public ChatPanel()
         {
-            this.m_obParent = obParent;
-        }
-        // public override OnDrawItem(System.Drawing.evet)
-
-        public void Initialize()
-        {
-            this.BackColor = Color.FromArgb(255, 145, 245, 168);
-            // Position
-            this.Top = m_obParent.Top;
-            this.Left = m_obParent.Left;
-            this.MinimumSize = new Size(100, m_obParent.Height);
-            this.Height = m_obParent.Height;
-            this.Width = 200;
-            this.TabStop = false;
-            this.SelectedIndex = -1;
         }
 
         private void AddItem(ChatItem obChatItem)
@@ -36,9 +20,6 @@ namespace UI
 
         public void PupolateItem()
         {
-            ChatItem obItem = new ChatItem(this);
-            obItem.SetChatName("Chat for test");
-            this.AddItem(obItem);
         }
 
         protected override void OnDrawItem(DrawItemEventArgs eDrawItem)
@@ -50,7 +31,6 @@ namespace UI
                     ((ChatItem) obItem).Draw(eDrawItem);
                 }
             }
-            MessageBox.Show("tt", "sontv", MessageBoxButtons.OK);
         }
 
         protected override void OnPaint(PaintEventArgs ePaint)
