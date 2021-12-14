@@ -12,12 +12,14 @@ namespace TCP
             m_sSocket = sSocket;
         }
 
-        public int WriteSocket(string strData)
+        public int WriteSocket(Message obMessage)
         {
             try
             {
-                byte[] szData = System.Text.Encoding.UTF8.GetBytes(strData);
-                m_sSocket.Write(szData);
+                string strMessage = "";
+                obMessage.GetEncodedMessage(ref strMessage);
+                byte[] szData = System.Text.Encoding.UTF8.GetBytes(strMessage);
+                m_sSocket.Write(szData, 0, szData.Length);
             }
             catch (System.Exception ex)
             {

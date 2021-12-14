@@ -36,7 +36,6 @@
 
 //         public void Draw(DrawItemEventArgs eDrawItem)
 //         {
-//             MessageBox.Show("sdf","Sdfsdf");
 //             if (m_strChatName.Length > 0)
 //             {
 //                 eDrawItem.Graphics.DrawString(m_strChatName, m_fntChatName, Brushes.Black, m_rcChatName, m_sfChatName);

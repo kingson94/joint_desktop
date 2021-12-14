@@ -28,7 +28,8 @@ namespace TCP
 
         public int SendData(string strMessage)
         {
-            return m_obConnection.WriteSocket(strMessage);
+            Message obMessage = new Message(strMessage, 5);
+            return m_obConnection.WriteSocket(obMessage);
         }
     }
 }
