@@ -39,22 +39,22 @@
 
             m_lsbChatPanel = new UI.ChatPanel();
             m_lsbChatPanel.Name = "pnlChat";
-            // m_lsbChatPanel.Width = (int) (this.Width * 33/100);
-            m_lsbChatPanel.Width = this.MinimumSize.Width;
-            m_lsbChatPanel.MinimumSize = this.MinimumSize;
-            m_lsbChatPanel.BackColor = System.Drawing.Color.DarkCyan;
-            m_lsbChatPanel.Anchor = (System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Bottom
-                                    | System.Windows.Forms.AnchorStyles.Right | System.Windows.Forms.AnchorStyles.Top);
+            m_lsbChatPanel.Width = (int) (this.Width * 45/100);
+            m_lsbChatPanel.BackColor = System.Drawing.Color.White;
             m_lsbChatPanel.Height = this.Height;
             m_lsbChatPanel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            m_lsbChatPanel.SelectionMode = System.Windows.Forms.SelectionMode.One;
 
+            UI.exListBoxItem i = new UI.exListBoxItem(1,"fdsfds", "sdfsdf", null);
+            m_lsbChatPanel.Items.Add(i);
+            
             txtLog = new System.Windows.Forms.TextBox();
             txtLog.Width = this.Width;
             txtLog.Height = 100;
             txtLog.Multiline = true;
             txtLog.Top = this.Height - txtLog.Height;
             txtLog.Left = this.Left;
-
+            // txtLog.Visible = false;
 
             this.Controls.Add(txtLog);
             this.Controls.Add(m_lsbChatPanel);

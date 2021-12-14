@@ -6,17 +6,17 @@ namespace UI
 {
     public class ChatPanel : ListBox
     {
-        private Dictionary<string, ChatItem> m_hmChatItem;
+        // private Dictionary<string, ChatItem> m_hmChatItem;
         private SortedDictionary<ulong, string> m_setChatTime;
 
         public ChatPanel()
         {
         }
 
-        private void AddItem(ChatItem obChatItem)
-        {
-            this.Items.Add(obChatItem);
-        }
+        // private void AddItem(ChatItem obChatItem)
+        // {
+        //     this.Items.Add(obChatItem);
+        // }
 
         public void PupolateItem()
         {
@@ -26,9 +26,17 @@ namespace UI
         {
             if (this.Items.Count > 0)
             {
-                foreach (var obItem in this.Items)
+                foreach (var obItem in this.Controls)
                 {
-                    ((ChatItem) obItem).Draw(eDrawItem);
+                    // _imageSize = new Size(80,60);
+                    // this.ItemHeight = _imageSize.Height + this.Margin.Vertical;
+                    // _fmt = new StringFormat();
+                    // _fmt.Alignment = StringAlignment.Near;
+                    // _fmt.LineAlignment = StringAlignment.Near;
+                    // _titleFont = new Font(this.Font, FontStyle.Bold);
+                    // _detailsFont = new Font(this.Font, FontStyle.Regular);
+                    ((exListBoxItem) obItem).drawItem(eDrawItem, DefaultPadding, new Font(this.Font, FontStyle.Bold), 
+                    new Font(this.Font, FontStyle.Regular), new StringFormat(), new Size(80,60));
                 }
             }
         }
