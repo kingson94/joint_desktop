@@ -1,32 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace App
 {
     public partial class MainFrame : Form
     {
-
-        private TCP.Client m_tcpClient = null;
+        private App.AppManager pApp = null;
         public MainFrame()
         {
             // Comnponent initialization
             InitializeComponent();
-            PopulateComponent();
+            pApp = new AppManager();
+
             // Event change
-            m_tcpClient = new TCP.Client();
-            m_tcpClient.Connect("192.168.245.135", 8012);
             this.Resize += MainFramOnResize;
+
+            // Register component
+            RegisterComponent();
         }
 
-        public void PopulateComponent()
+        public void RegisterComponent()
         {
+            pApp.RegisterComponent();
+            pApp.Init();
         }
 
         private void MainFramOnResize(object obSender, EventArgs eResize)
@@ -40,8 +36,7 @@ namespace App
                 m_lsbChatPanel.Width = (int) (this.Width * 45/100);
             }
 
-            m_lsbChatPanel.Height = this.Height;
-            m_tcpClient.SendData("Hello");
+            m_lsbChatPanel.Height = this.Bottom - m_lsbChatPanel.Top;
         }
     }
 }

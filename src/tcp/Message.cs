@@ -2,8 +2,6 @@ namespace TCP
 {
     public class Message
     {
-        static int TCP_HEADER_SIZE = 8;
-        static int MAGIC_PACKET_BYTE = 0x66;
         private string m_strContent;
 
         private int m_iRequestID;
@@ -19,13 +17,13 @@ namespace TCP
             try
             {
                 strEncodedMessage = "";
-                int iPacketSize = m_strContent.Length + TCP_HEADER_SIZE;
+                int iPacketSize = m_strContent.Length + Global.TCP_HEADER_SIZE;
                 byte[] szMessage = System.Text.Encoding.UTF8.GetBytes(m_strContent);
                 byte[] obTmpPacket = new byte[iPacketSize];
                 
                 // Magic header
-                obTmpPacket[0] = (byte) MAGIC_PACKET_BYTE;
-                obTmpPacket[1] = (byte) MAGIC_PACKET_BYTE;
+                obTmpPacket[0] = (byte) Global.MAGIC_PACKET_BYTE;
+                obTmpPacket[1] = (byte) Global.MAGIC_PACKET_BYTE;
 
                 // Data size
                 obTmpPacket[2] = (byte) ((iPacketSize >> 24) & 0xFF);

@@ -11,4 +11,4 @@ namespace Core
             return m_iThreadID;
         }
     }
-} // namespace core
+} // namespace Core
