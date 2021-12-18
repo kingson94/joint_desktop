@@ -1,6 +1,6 @@
-﻿namespace App
+﻿namespace UI
 {
-    partial class MainFrame
+    partial class ChatFrame
     {
         /// <summary>
         ///  Required designer variable.
@@ -33,7 +33,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Size = new System.Drawing.Size(960, 640);
             this.Text = "Joint desktop";
-            this.Name = "frmMainFrame";
+            this.Name = "frmChatFrame";
             this.Icon = new System.Drawing.Icon("asset\\joint.ico");
             this.MinimumSize = new System.Drawing.Size(400, 600);
 

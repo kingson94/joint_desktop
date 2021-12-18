@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace App
+namespace UI
 {
-    public partial class MainFrame : Form
+    public partial class ChatFrame : Form
     {
         private App.AppManager pApp = null;
-        public MainFrame()
+        public ChatFrame()
         {
             // Comnponent initialization
             InitializeComponent();
-            pApp = new AppManager();
+            pApp = new App.AppManager();
 
             // Event change
             this.Resize += MainFramOnResize;

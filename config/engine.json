@@ -1,0 +1,4 @@
+{
+    "worker_count": 10,
+    "queue_capacity": 1000
+}

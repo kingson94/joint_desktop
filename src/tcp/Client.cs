@@ -48,6 +48,8 @@ namespace TCP
             {
                 // Json config load failed
             }
+            Core.BaseThread p = new BaseThread(1);
+            p.Start();
         }
     }
 }
