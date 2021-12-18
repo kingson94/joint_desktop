@@ -23,6 +23,10 @@ namespace Core
             m_bIsInit = true;
         }
 
+        public virtual void Start()
+        {
+        }
+
         public string GetID()
         {
             return m_strComponentID;

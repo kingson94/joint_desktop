@@ -10,6 +10,7 @@ namespace TCP
         private string m_strHost;
         private int m_iPort;
         protected Connection m_obConnection;
+        protected ClientLauncher m_obClientLauncher;
         public Client() : base(Global.TCP_CLIENT_COMP)
         {
         }
@@ -48,8 +49,35 @@ namespace TCP
             {
                 // Json config load failed
             }
-            Core.BaseThread p = new BaseThread(1);
-            p.Start();
+        }
+
+        public override void Start()
+        {
+            base.Start();
+            m_obClientLauncher = new ClientLauncher(1, this);
+            m_obClientLauncher.Start();
+        }
+        public void ListenSocket()
+        {
+            while (true)
+            {
+                System.Threading.Thread.Sleep(100);
+            }
+        }
+    }
+
+    public class ClientLauncher : BaseThread
+    {
+        private Client m_obClient = null;
+        public ClientLauncher(int iThreadID, Client obCLient) : base(iThreadID)
+        {
+            m_obClient = obCLient;
+        }
+
+        public override void Run()
+        {
+            base.Run();
+            m_obClient.ListenSocket();
         }
     }
 }

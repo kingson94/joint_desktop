@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Windows.Forms;
+using App;
 
 namespace UI
 {
     public partial class ChatFrame : Form
     {
-        private App.AppManager pApp = null;
+        private AppManager m_obApp;
         public ChatFrame()
         {
             // Comnponent initialization
             InitializeComponent();
-            pApp = new App.AppManager();
+            AppManager.CreateInstance();
+            m_obApp = AppManager.GetInstance();
 
             // Event change
             this.Resize += MainFramOnResize;
@@ -21,8 +23,9 @@ namespace UI
 
         public void RegisterComponent()
         {
-            pApp.RegisterComponent();
-            pApp.Init();
+            m_obApp.RegisterComponent();
+            m_obApp.Init();
+            m_obApp.Start();
         }
 
         private void MainFramOnResize(object obSender, EventArgs eResize)
