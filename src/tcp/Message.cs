@@ -42,6 +42,7 @@ namespace TCP
             catch (System.Exception ex)
             {
                 // Encode message get error
+                System.Console.WriteLine(ex.ToString());
             }
         }
     }

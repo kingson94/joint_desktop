@@ -15,9 +15,11 @@ namespace App
         static void Main()
         {
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
-            Application.EnableVisualStyles();
+            // Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UI.ChatFrame());
+            App.AppManager.CreateInstance();
+            App.AppManager.GetInstance().Run();
+            Application.Run();
         }
     }
 }

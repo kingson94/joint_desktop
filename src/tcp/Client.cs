@@ -54,8 +54,11 @@ namespace TCP
         public override void Start()
         {
             base.Start();
-            m_obClientLauncher = new ClientLauncher(1, this);
-            m_obClientLauncher.Start();
+            if (m_bIsInit)
+            {
+                m_obClientLauncher = new ClientLauncher(1, this);
+                m_obClientLauncher.Start();
+            }
         }
         public void ListenSocket()
         {

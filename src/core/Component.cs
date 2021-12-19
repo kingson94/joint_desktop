@@ -2,8 +2,8 @@ namespace Core
 {
     public class Component
     {
-        private string m_strComponentID;
-        private bool m_bIsInit;
+        protected string m_strComponentID;
+        protected bool m_bIsInit;
         public Component(string strComponentID)
         {
             m_strComponentID = strComponentID;

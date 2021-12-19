@@ -1,4 +1,3 @@
-using System.Text.Json;
 using Newtonsoft.Json.Linq;
 
 public static class Util
@@ -12,6 +11,7 @@ public static class Util
         }
         catch (System.Exception ex)
         {
+            System.Console.WriteLine(ex.ToString());
             return 1;
         }
 
@@ -39,6 +39,7 @@ public static class Util
         }
         catch (System.Exception ex)
         {
+            System.Console.WriteLine(ex.ToString());
             return "";
         }
         

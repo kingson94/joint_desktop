@@ -8,5 +8,4 @@ public static class Global
 
     public const string CLIENT_CONFIG = "config/setting.json";
     public const string ENGINE_CONFIG = "config/engine.json";
-    
 }

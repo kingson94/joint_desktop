@@ -11,24 +11,12 @@ namespace UI
         {
             // Comnponent initialization
             InitializeComponent();
-            AppManager.CreateInstance();
-            m_obApp = AppManager.GetInstance();
 
             // Event change
-            this.Resize += MainFramOnResize;
-
-            // Register component
-            RegisterComponent();
+            this.Resize += FrameOnResize;
         }
 
-        public void RegisterComponent()
-        {
-            m_obApp.RegisterComponent();
-            m_obApp.Init();
-            m_obApp.Start();
-        }
-
-        private void MainFramOnResize(object obSender, EventArgs eResize)
+        private void FrameOnResize(object obSender, EventArgs eResize)
         {
             if (this.Width <= (int) (this.MinimumSize.Width * 13/10))
             {

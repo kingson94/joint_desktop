@@ -24,6 +24,7 @@ namespace TCP
             catch (System.Exception ex)
             {
                 // Write socket get error
+                System.Console.WriteLine(ex.ToString());
                 return -1;
             }
             return 0;

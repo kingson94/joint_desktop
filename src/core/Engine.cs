@@ -78,9 +78,12 @@ namespace Core
 
         public override void Run()
         {
-            foreach (Worker obWorker in m_lstWorker)
+            if (m_bIsInit)
             {
-                obWorker.Start();
+                foreach (Worker obWorker in m_lstWorker)
+                {
+                    obWorker.Start();
+                }
             }
         }
 
