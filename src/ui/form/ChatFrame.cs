@@ -13,10 +13,10 @@ namespace UI
             InitializeComponent();
 
             // Event change
-            this.Resize += FrameOnResize;
+            this.Resize += OnFrameResize;
         }
 
-        private void FrameOnResize(object obSender, EventArgs eResize)
+        private void OnFrameResize(object obSender, EventArgs eResize)
         {
             if (this.Width <= (int) (this.MinimumSize.Width * 13/10))
             {

@@ -36,7 +36,6 @@
             this.Name = "frmChatFrame";
             this.Icon = new System.Drawing.Icon(@"asset\joint.ico");
             this.MinimumSize = new System.Drawing.Size(400, 600);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 
             m_lsbChatPanel = new UI.ChatPanel();
             m_lsbChatPanel.Name = "pnlChat";

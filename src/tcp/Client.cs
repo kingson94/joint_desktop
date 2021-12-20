@@ -57,6 +57,7 @@ namespace TCP
             if (m_bIsInit)
             {
                 m_obClientLauncher = new ClientLauncher(1, this);
+                m_obClientLauncher.SetBackground(true);
                 m_obClientLauncher.Start();
             }
         }

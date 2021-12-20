@@ -16,6 +16,7 @@ namespace App
             frmChat = new UI.ChatFrame();
 
             frmLogin.FormClosed += OnLoginClosed;
+            frmChat.FormClosed += OnChatClosed;
         }
 
         public static void CreateInstance()
@@ -91,6 +92,11 @@ namespace App
         }
 
         public void OnLoginClosed(object obSender, System.EventArgs evtClose)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void OnChatClosed(object obSender, System.EventArgs eResize)
         {
             System.Windows.Forms.Application.Exit();
         }
